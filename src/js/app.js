@@ -13,10 +13,22 @@ class App extends React.Component
 		return (
 			<div>
 				<Toggel>
-					<p>hi iam show now can you see me</p>
+				{
+					({on,toggle})=>(
+					<div>
+						{on && <h2>children hello world</h2>}
+						<button type="button" onClick={toggle}>show/hidden</button>
+					</div>
+					)
+				}
 				</Toggel>
 			</div>
 		)
+	}
+	componentDidMount()
+	{
+		let app = ReactDOM.findDOMNode(this);
+		console.dir(app);
 	}
 }
 
