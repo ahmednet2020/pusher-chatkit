@@ -4,6 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import compponents
 import Toggel from './components/toggel';
+import MessageList from './components/messageList';
+import RoomList from './components/roomList';
+import NewRoom from './components/newRoom';
+import SendNewMessage from './components/sendNewMessage';
 //app class
 
 class App extends React.Component
@@ -12,16 +16,10 @@ class App extends React.Component
 	{
 		return (
 			<div>
-				<Toggel>
-				{
-					({on,toggle})=>(
-					<div>
-						{on && <h2>children hello world</h2>}
-						<button type="button" onClick={toggle}>show/hidden</button>
-					</div>
-					)
-				}
-				</Toggel>
+				<RoomList/>
+				<MessageList/>
+				<NewRoom/>
+				<SendNewMessage/>
 			</div>
 		)
 	}
