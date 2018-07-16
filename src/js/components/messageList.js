@@ -8,7 +8,9 @@ export default class MessageList extends Component
 	{
 		return (
 			<section className="message-list">
-				<Message text="welcome"/>
+				<Message id="ahmed" text="hello"/>
+				<Message id="samir" text="hi"/>
+				<Message id="ali" text="hello guys"/>
 			</section>
 			)
 	}

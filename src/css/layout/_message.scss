@@ -1,0 +1,15 @@
+.message
+{
+	border-bottom: 1px solid $main-color2;
+	.user-id
+	{
+		color: $main-color;
+    	padding: 0.5rem 0;
+    	&:after
+    	{
+    		content:':';
+    		display:inline;
+    		vertical-align: middle;
+    	}
+	}
+}

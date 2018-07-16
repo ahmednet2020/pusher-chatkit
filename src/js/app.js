@@ -15,12 +15,12 @@ class App extends React.Component
 	render()
 	{
 		return (
-			<div>
+			<main className="content">
 				<RoomList/>
-				<MessageList/>
 				<NewRoom/>
+				<MessageList/>
 				<SendNewMessage/>
-			</div>
+			</main>
 		)
 	}
 	componentDidMount()

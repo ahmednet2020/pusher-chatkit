@@ -1,0 +1,23 @@
+.new-room
+{
+	@include perfix(flex,0 0 15%,(webkit,moz,ms));
+	width: 30%;
+	form,input
+	{
+		height:100%;
+		color:$text-color;
+		vertical-align: middle;
+	    font-size: 1.5rem;
+	}
+	input[type='text']{
+		width: 85%;
+		text-indent: 0.5rem;
+	    border: 1px solid $main-color2;
+	}
+	input[type='submit']
+	{
+		width: 15%;
+	    cursor: pointer;
+	    background-color:$main-color2;
+	}
+}

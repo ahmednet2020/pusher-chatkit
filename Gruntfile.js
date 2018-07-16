@@ -1,4 +1,4 @@
-
+const sass = require('node-sass');
 'use strict';  
 module.exports = function(grunt) {
   //load all grunt plugin
@@ -28,7 +28,30 @@ module.exports = function(grunt) {
       }
     }
   },
+  //sass config
+  sass: {
+    options: {
+        implementation: sass,
+        sourceMap: true
+    },
+    dist: {
+        files: {
+            './build/css/main.css': './src/css/main.scss'
+        }
+    }
+  },
+  //watch config
+  watch: {
+    js: {
+      files: ['./src/js/**'],
+      tasks: ['browserify'],
+    },
+    css: {
+      files: ['./src/css/**'],
+      tasks: ['sass'],
+    }
+  },
 })
   //run Tasks
-  grunt.registerTask('default', ['browserify']);
+  grunt.registerTask('default', ['browserify','sass','watch']);
 };

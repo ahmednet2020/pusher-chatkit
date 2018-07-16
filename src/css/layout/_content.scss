@@ -1,0 +1,10 @@
+.content
+{
+	@include flex();
+	@include perfix(flex-wrap,wrap,(webkit,moz,ms));
+	@include perfix(align-content,space-between,(webkit,moz,ms));
+	@include perfix(flex-direction,column,(webkit,moz,ms));
+    padding: 1rem;
+    overflow: hidden;
+    height: 100%;
+}

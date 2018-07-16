@@ -1,0 +1,12 @@
+.room-list
+{
+	@include perfix(flex,0 0 85%,(webkit,moz,ms));
+	font-size: 1.5rem;
+    font-family: 'Open Sans';
+    text-transform: capitalize;
+    background-color: $main-color;
+    color:$white-color;
+    padding: 1rem;
+    overflow: auto;
+    width:30%;
+}
