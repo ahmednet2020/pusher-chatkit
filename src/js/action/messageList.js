@@ -5,3 +5,10 @@ export function messageList(message)
 		message
 	}
 } 
+export function changeRoom(roomId)
+{
+	return {
+		type: 'CHANGE_ROOM',
+		roomId
+	}
+} 

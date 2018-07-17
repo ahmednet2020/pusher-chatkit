@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 //redux
-//redux
 import { connect  } from 'react-redux';
 //import component
 import Message from './message';
@@ -18,6 +17,10 @@ class MessageList extends Component
 				}
 			</section>
 			)
+	}
+	componentDidMount()
+	{
+		
 	}
 }
 

@@ -1,14 +1,11 @@
 import React from 'react';
 
-export default function Room({roomlist})
+export default function Room({active,roomActive,roomlist})
 {
 	return (
-		<ul className="room">
-		{
-			roomlist.map(
-				(room,i)=><li key={i}>{room}</li>
-				)
-		}
-		</ul>
+		<li className={active}>
+			<button type="button" className="btn-room" 
+			onClick={()=>roomActive(roomlist.id)}>{roomlist.name}</button>
+		</li>
 		)
 }

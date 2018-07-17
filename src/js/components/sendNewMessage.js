@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 
 export default class SendNewMessage extends Component 
 {
+	submit(e)
+	{
+		e.preventDefault();
+		const newmessage = e.target.newmessage.value;
+		this.props.sendMessage(newmessage);
+		e.target.reset();
+	}
 	render()
 	{
 		return (
 			<section className="new-message">
-				<form>
-					<input autoComplete="off" type="text" placeholder="send new message" name="newroom" required />
+				<form onSubmit={this.submit.bind(this)}>
+					<input autoComplete="off" type="text" placeholder="send new message" name="newmessage" required />
 					<input type="submit" value="send"/>
 				</form>
 			</section>
