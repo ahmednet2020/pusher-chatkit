@@ -10,10 +10,11 @@ class RoomList extends Component
 	{
 		return (
 		<section className="room-list">
+			<h2 className="room-title">your rooms:</h2>
 			<ul className="room">
 			{
 				this.props.roomList.map(room => {
-					let activeRoom = (room.id === this.props.activeRoom ? 'active':'');
+					let activeRoom = (room.id === this.props.activeRoom.id ? 'active':'');
 					return (<Room 
 					key={room.id} 
 					roomActive={this.props.roomActive}

@@ -1,3 +1,4 @@
+//roomList action
 export function roomList(room)
 {
 	return {
