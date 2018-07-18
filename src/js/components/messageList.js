@@ -7,6 +7,7 @@ import Message from './message';
 
 class MessageList extends Component 
 {
+	//jsx function
 	render()
 	{
 		if(!this.props.activeRoom.id)

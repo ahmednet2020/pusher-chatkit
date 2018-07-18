@@ -6,6 +6,7 @@ import Room from './room';
 
 class RoomList extends Component 
 {
+	//jsx function
 	render()
 	{
 		return (

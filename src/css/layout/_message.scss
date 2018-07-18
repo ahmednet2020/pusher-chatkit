@@ -12,4 +12,12 @@
     		vertical-align: middle;
     	}
 	}
+    .user-txt
+    {
+        background-color: $main-color;
+        color:$white-color;
+        padding: 0.5em 1em;
+        font-size: 1.5rem;
+        @include border-radius(50px);
+    }
 }

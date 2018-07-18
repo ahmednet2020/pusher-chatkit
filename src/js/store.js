@@ -1,3 +1,4 @@
+//react store flow 
 import { createStore, compose } from 'redux';
 import rootReducer from './reducer/rootReducer'
 //this code for devtool extension for test only

@@ -94,11 +94,12 @@ class App extends React.Component
             name
         })
         .then(room => {
-        	this.roomList();
-        	this.roomActive(room.id,room.name);
+        	this.roomList();//refresh roomlist
+        	this.roomActive(room.id,room.name);//go active this room created
         })
         .catch(err => console.log('error with createRoom: ', err));
 	}
+	//render jsx
 	render()
 	{
 		return (
@@ -110,7 +111,7 @@ class App extends React.Component
 			</main>
 		)
 	}
-	//fire api when app render
+	//fire api when react app load
 	componentDidMount()
 	{
 		this.chatManager();

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+//create new room class
 export default class NewRoom extends Component 
 {
 	submit(e)
@@ -9,6 +9,7 @@ export default class NewRoom extends Component
 		this.props.newRoom(newroom);
 		e.target.reset();
 	}
+	//jsx function
 	render()
 	{
 		return (

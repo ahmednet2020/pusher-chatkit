@@ -4,6 +4,7 @@ import { connect  } from 'react-redux';
 //SendNewMessage class
 class SendNewMessage extends Component 
 {
+	//function when submit
 	submit(e)
 	{
 		e.preventDefault();
@@ -11,6 +12,7 @@ class SendNewMessage extends Component
 		this.props.sendMessage(newmessage);
 		e.target.reset();
 	}
+	//jsx function
 	render()
 	{
 		return (

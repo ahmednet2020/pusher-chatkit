@@ -48,7 +48,7 @@ span {
 html, body {
   font-family: 'Raleway', sans-serif; }
 
-h1, h2, h3, h4, h5, h6, .h-style, .room .btn-room {
+h1, h2, h3, h4, h5, h6, .h-style {
   font-family: 'Open Sans', sans-serif; }
 
 html, body {
@@ -128,6 +128,14 @@ h6 {
       content: ':';
       display: inline;
       vertical-align: middle; }
+  .message .user-txt {
+    background-color: #39b3f1;
+    color: #fff;
+    padding: 0.5em 1em;
+    font-size: 1.5rem;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px; }
 
 .message-list {
   -webkit-flex: 0 0 85%;
