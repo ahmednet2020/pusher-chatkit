@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
-export default class SendNewMessage extends Component 
+//redux
+import { connect  } from 'react-redux';
+//SendNewMessage class
+class SendNewMessage extends Component 
 {
 	submit(e)
 	{
@@ -14,7 +16,7 @@ export default class SendNewMessage extends Component
 		return (
 			<section className="new-message">
 				<form onSubmit={this.submit.bind(this)}>
-					<input autoComplete="off" type="text" placeholder="send new message" name="newmessage" required />
+					<input disabled={!this.props.activeRoom} autoComplete="off" type="text" placeholder="send new message" name="newmessage" required />
 					<input type="submit" value="send"/>
 				</form>
 			</section>
@@ -22,3 +24,7 @@ export default class SendNewMessage extends Component
 	}
 }
 
+const mapStateToProps = state => ({
+  activeRoom:state.activeRoom
+})
+export default connect(mapStateToProps)(SendNewMessage);

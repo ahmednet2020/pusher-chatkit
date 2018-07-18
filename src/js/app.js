@@ -29,6 +29,7 @@ class App extends React.Component
         this.sendMessage = this.sendMessage.bind(this);//event sendMessage
         this.roomActive = this.roomActive.bind(this);//event roomActive
         this.sendMessage = this.sendMessage.bind(this);//event sendMessage
+        this.newRoom = this.newRoom.bind(this);
     }
     //chatkit api config function to connect with chat
 	chatManager()
@@ -42,7 +43,6 @@ class App extends React.Component
 		.then(currentUser => {
 			this.currentUser = currentUser;
 			this.roomList();
-			this.roomActive(currentUser.rooms[0].id,currentUser.rooms[0].name);
 		})
 		.catch(error => {console.log(error)})
 
@@ -83,14 +83,28 @@ class App extends React.Component
 		this.currentUser.sendMessage({
 		  text,
 		  roomId:this.state.roomId,
-		});
+		})
+		.then(messageId => messageId)
+		.catch(err => alert("join a room first"));
+	}
+	//create new Room event
+	newRoom(name)
+	{
+		this.currentUser.createRoom({
+            name
+        })
+        .then(room => {
+        	this.roomList();
+        	this.roomActive(room.id,room.name);
+        })
+        .catch(err => console.log('error with createRoom: ', err));
 	}
 	render()
 	{
 		return (
 			<main className="content">
 				<RoomList roomActive={this.roomActive}/>
-				<NewRoom/>
+				<NewRoom newRoom={this.newRoom}/>
 				<MessageList/>
 				<SendNewMessage sendMessage={this.sendMessage}/>
 			</main>

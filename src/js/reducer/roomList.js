@@ -5,7 +5,7 @@ export function roomList(state = [],action)
 	switch (action.type)
 	{
 		case 'ROOM_LIST':
-		return [...state,...action.room];
+		return [...action.room];
 		default:
 		return state;
 	}

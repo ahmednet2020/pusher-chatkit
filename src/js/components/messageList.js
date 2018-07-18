@@ -9,12 +9,19 @@ class MessageList extends Component
 {
 	render()
 	{
-		console.log(this.props.messageList);
+		if(!this.props.activeRoom.id)
+		{
+			return (
+				<section className="message-list">
+					<h2 className="message-title"> &larr; Join a room!</h2>
+				</section>
+				);
+		}
 		return (
 			<section className="message-list">
 			<h2 className="message-title">room name: {this.props.activeRoom.name}</h2>
 				{
-					this.props.messageList[this.props.activeRoom.id] && 
+					this.props.messageList[this.props.activeRoom.id] &&
 					this.props.messageList[this.props.activeRoom.id].map(m =>{
 						return <Message key={m.id} id={m.senderId} text={m.text}/>
 					})
