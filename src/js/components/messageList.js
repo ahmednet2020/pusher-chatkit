@@ -9,6 +9,7 @@ class MessageList extends Component
 {
 	render()
 	{
+		console.log(this.props.messageList);
 		return (
 			<section className="message-list">
 			<h2 className="message-title">room name: {this.props.activeRoom.name}</h2>
@@ -21,12 +22,17 @@ class MessageList extends Component
 			</section>
 			)
 	}
+	componentWillUpdate() {
+		const list = findDOMNode(this);
+		//no auto scroll when read old massega
+        this.shouldScrollToBottom = list.scrollTop + list.clientHeight + 50 >= list.scrollHeight;
+    }
 	componentDidUpdate()
 	{
+		const list = findDOMNode(this);
 		//to fixed scroll in last message
 		//auto scroll
-		let list = findDOMNode(this);
-		list.scrollTop = list.scrollHeight;
+		if(this.shouldScrollToBottom) list.scrollTop = list.scrollHeight;
 	}
 }
 
